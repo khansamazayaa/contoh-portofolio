@@ -44,7 +44,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
         isScrolled ? 'glass-strong shadow-card' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 navbg">
+      <div className="container mx-auto px-4 bg-navbg">
         <div className="flex items-center justify-between h-16 md:h-20">
           <motion.a
             href="#home"
