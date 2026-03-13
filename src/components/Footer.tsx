@@ -5,14 +5,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: ' https://khansamazayaa.github.io/contoh-portofolio/', label: 'GitHub' },
+    { icon: Github, href: 'httpps://github.com/khansamazayaa', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Youtube, href: '#', label: 'YouTube' },
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
   return (
-    <footer className="py-8 border-t border-border bg-muted">
+    <footer className="py-8 border-t border-border bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.div
@@ -36,6 +36,8 @@ export default function Footer() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
                 aria-label={social.label}
               >

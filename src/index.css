@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 
 @layer base {
   :root {
@@ -21,8 +23,8 @@
     --secondary: 220 15% 92%;
     --secondary-foreground: 220 20% 20%;
 
-    --muted: 43 60% 90%;
-    --muted-foreground: 40 30% 25%;
+    --muted: 45 60% 40%;
+    --muted-foreground: 45 60% 40%;
 
     --accent: 43 65% 50%;
     --accent-foreground: 40 30% 15%;
