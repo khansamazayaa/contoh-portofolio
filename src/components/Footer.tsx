@@ -5,21 +5,21 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'httpps://github.com/khansamazayaa', label: 'GitHub' },
+    { icon: Github, href: "https://github.com/khansamazayaa", label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Youtube, href: '#', label: 'YouTube' },
     { icon: Instagram, href: '#', label: 'Instagram' },
   ];
 
   return (
-    <footer className="py-8 border-t border-border bg-muted/30">
+    <footer className="py-8 border-t border-border bg-amber-500">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-2 text-muted-foreground"
+            className="flex items-center gap-2 text-black"
           >
             <span>© {currentYear} Made with</span>
             <Heart className="h-4 w-4 text-destructive fill-destructive" />

@@ -129,7 +129,7 @@ export default function ProjectsSection() {
                       </Button>
                     )}
                     {project.demo && (
-                      <Button size="sm" className="rounded-full" asChild>
+                      <Button size="sm" className="rounded-full text-black" asChild>
                         <a href={project.demo}>
                           <ExternalLink className="h-4 w-4 mr-1" />
                           Demo
@@ -137,7 +137,7 @@ export default function ProjectsSection() {
                       </Button>
                     )}
                     {project.youtube && (
-                      <Button size="sm" className="rounded-full" asChild>
+                      <Button size="sm" className="rounded-full text-black" asChild>
                         <a href={project.youtube}>
                           <Play className="h-4 w-4 mr-1" />
                           Watch

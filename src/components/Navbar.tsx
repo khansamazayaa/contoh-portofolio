@@ -52,7 +52,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="font-display text-xl md:text-2xl font-bold text-gradient cursor-pointer"
+            className="text-black font-bold text-lg tracking-wide"
             whileHover={{ scale: 1.05 }}
           >
             khansa's portofolio
@@ -68,7 +68,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium cursor-pointer"
+                className="text-black textforeground transition-colors font-medium cursor-pointer"
                 whileHover={{ y: -2 }}
               >
                 {item.label}

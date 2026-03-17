@@ -240,7 +240,7 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full rounded-full"
+                className="w-full rounded-full text-black"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -249,9 +249,9 @@ export default function ContactSection() {
                     Mengirim...
                   </>
                 ) : (
-                  <>
+                 <>
                     <Send className="h-4 w-4 mr-2" />
-                    Kirim Pesan
+                    Kirim Pesan 
                   </>
                 )}
               </Button>
