@@ -119,7 +119,7 @@ export default function HeroSection() {
               transition={{ delay: 0.9 }}
             >
               {[
-                { icon: Github, href: "#" },
+                { icon: Github, href: "https://github.com/khansamazayaa" },
                 { icon: Linkedin, href: "#" },
                 { icon: Youtube, href: "#" },
                 { icon: Instagram, href: "#" },
