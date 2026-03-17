@@ -57,41 +57,41 @@
   }
 
   .dark {
-    --background: 220 25% 6%;
-    --foreground: 210 20% 98%;
+    --background: 40 25% 8%;
+  --foreground: 45 35% 92%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 210 20% 98%;
+  --card: 40 20% 12%;
+  --card-foreground: 45 30% 90%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 20% 98%;
+  --popover: 40 20% 12%;
+  --popover-foreground: 45 30% 90%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 25% 6%;
+  --primary: 45 90% 60%;
+  --primary-foreground: 45 85% 65;
 
-    --secondary: 220 20% 18%;
-    --secondary-foreground: 210 20% 90%;
+  --secondary: 42 30% 20%;
+  --secondary-foreground: 45 35% 90%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 15% 60%;
+  --muted: 40 20% 18%;
+  --muted-foreground: 45 25% 70%;
 
-    --accent: 175 80% 50%;
-    --accent-foreground: 220 25% 6%;
+  --accent: 45 75% 60%;
+  --accent-foreground: 40 30% 10%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 175 80% 50%;
+  --border: 40 25% 25%;
+  --input: 40 25% 20%;
+  --ring: 45 85% 55%;
 
     /* Custom tokens dark */
-    --gradient-primary: linear-gradient(135deg, hsl(0, 80%, 50%), hsl(0, 80%, 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 6%) 0%, hsl(220 30% 10%) 100%);
-    --navbg: linear-gradient(180deg, hsl(0, 73%, 52%) 0%, hsl(0, 2%, 17%) 100%);
-     --shadow-glow: 0 0 60px hsl(175 80% 50% / 0.4);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
-    --shadow-card-hover: 0 8px 30px hsl(175 80% 50% / 0.15);
+    --gradient-primary: linear-gradient(135deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
+    --gradient-hero: linear-gradient(180deg, hsl(40, 30%, 8%) 0%, hsl(40, 25%, 15%) 100%);
+    --navbg: linear-gradient(100deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
+    --shadow-glow:  0 0 40px hsl(45 85% 60% / 0.6);
+    --shadow-card: 0 6px 20px hsl(43 40% 30% / 0.12);
+    --shadow-card-hover: 0 12px 30px hsl(43 40% 30% / 0.2);
 
     --sidebar-background: 220 25% 8%;
     --sidebar-foreground: 210 20% 90%;
