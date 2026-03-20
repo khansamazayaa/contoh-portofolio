@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+
+/* ✅ FIX: declare window.translateTo */
+declare global {
+  interface Window {
+    translateTo?: (lang: string) => void;
+  }
+}
 
 interface NavbarProps {
   isDark: boolean;
@@ -11,6 +18,7 @@ interface NavbarProps {
 export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState("en");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +27,13 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // ✅ FIX: tanpa any + safe call
+  const toggleLang = () => {
+    const next = lang === "en" ? "id" : "en";
+    window.translateTo?.(next); // aman kalau belum load
+    setLang(next);
+  };
 
   const navItems = [
     { label: 'Home', href: '#home' },
@@ -46,6 +61,8 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
     >
       <div className="container mx-auto px-4 bg-navbg">
         <div className="flex items-center justify-between h-16 md:h-20">
+          
+          {/* Logo */}
           <motion.a
             href="#home"
             onClick={(e) => {
@@ -58,8 +75,8 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
             khansa's portofolio
           </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop */}
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <motion.a
                 key={item.label}
@@ -68,12 +85,25 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection(item.href);
                 }}
-                className="text-black textforeground transition-colors font-medium cursor-pointer"
+                className="text-black transition-colors font-medium cursor-pointer"
                 whileHover={{ y: -2 }}
               >
                 {item.label}
               </motion.a>
             ))}
+
+            {/* 🌐 Translate */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleLang}
+              className="rounded-full"
+              title="Translate"
+            >
+              <Globe className="h-5 w-5" />
+            </Button>
+
+            {/* 🌙 Theme */}
             <Button
               variant="ghost"
               size="icon"
@@ -104,16 +134,28 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile */}
           <div className="flex items-center gap-2 md:hidden">
+            
+            {/* 🌐 Translate */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleLang}
+            >
+              <Globe className="h-5 w-5" />
+            </Button>
+
+            {/* Theme */}
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full"
             >
               {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
+
+            {/* Menu */}
             <Button
               variant="ghost"
               size="icon"
@@ -143,7 +185,7 @@ export default function Navbar({ isDark, toggleTheme }: NavbarProps) {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
+                  className="hover:text-foreground transition-colors font-medium py-2"
                 >
                   {item.label}
                 </a>
