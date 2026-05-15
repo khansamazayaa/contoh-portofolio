@@ -17,7 +17,12 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
 
         {/* TITLE */}
-        <motion.div initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
           <span className="text-primary font-medium mb-2 block">Kontak</span>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Hubungi Saya</h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
@@ -25,7 +30,7 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
 
-          {/* KIRI (CARD KONTAK) */}
+          {/* KIRI */}
           <div className="space-y-6 [perspective:1000px]">
             <div>
               <h3 className="text-2xl font-bold mb-4">Mari Berkolaborasi!</h3>
@@ -40,20 +45,26 @@ export default function ContactSection() {
           </div>
 
           {/* KANAN (FORM) */}
-          <motion.div initial={{ opacity: 0, x: 80, scale: 0.9 }} whileInView={{ opacity: 1, x: 0, scale: 1 }} transition={{ duration: 0.6 }}>
+          <motion.div
+            initial={{ opacity: 0, x: 80, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
             <motion.form
               action="https://formspree.io/f/xbdzwarz"
               method="POST"
-              className="space-y-6 p-6 glass rounded-2xl shadow-lg"
+              className="space-y-6 p-6 glass rounded-2xl shadow-lg transition duration-300 hover:shadow-2xl"
               whileHover={{ y: -10, scale: 1.02, rotateX: 3, rotateY: -3 }}
-              transition={{ type: 'spring', stiffness: 200 }}
             >
               <Input name="name" placeholder="Nama Anda" required />
               <Input name="email" type="email" placeholder="Email Anda" required />
               <Input name="subject" placeholder="Subjek" required />
               <Textarea name="message" placeholder="Tulis pesan..." rows={5} required />
 
-              <motion.div whileHover={{ scale: 1.1, y: -4, rotate: -2 }} whileTap={{ scale: 0.95, rotate: 0 }} transition={{ type: 'spring', stiffness: 300 }}>
+              <motion.div
+                whileHover={{ scale: 1.1, y: -4, rotate: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button className="w-full rounded-full bg-amber-500 hover:bg-amber-600 text-black shadow-md">
                   <Send className="h-4 w-4 mr-2" />
                   Kirim Pesan
@@ -67,14 +78,14 @@ export default function ContactSection() {
   );
 }
 
-// COMPONENT INTERACTIVE CARD
+// CARD COMPONENT
 function InteractiveCard({ info }: { info: typeof contactInfo[0] }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const rotateX = useTransform(y, [ -50, 50 ], [15, -15]);
-  const rotateY = useTransform(x, [ -50, 50 ], [-15, 15]);
+  const rotateX = useTransform(y, [-50, 50], [15, -15]);
+  const rotateY = useTransform(x, [-50, 50], [-15, 15]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
@@ -96,14 +107,14 @@ function InteractiveCard({ info }: { info: typeof contactInfo[0] }) {
       href={info.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-4 p-4 glass rounded-xl shadow-md"
+      className="group flex items-center gap-4 p-4 glass rounded-xl shadow-md transition duration-300 hover:shadow-2xl hover:bg-white/10"
       style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      whileHover={{ scale: 1.05, y: -5 }}
       whileTap={{ scale: 0.97 }}
-      transition={{ type: 'spring', stiffness: 200, damping: 15 }}
     >
-      <motion.div className="p-3 rounded-lg bg-primary/10">
+      <motion.div className="p-3 rounded-lg bg-primary/10 transition group-hover:bg-primary/20 group-hover:scale-110">
         <info.icon className="h-5 w-5 text-primary" />
       </motion.div>
 

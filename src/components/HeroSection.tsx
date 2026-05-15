@@ -74,8 +74,8 @@ export default function HeroSection() {
               transition={{ delay: 0.5 }}
               className="text-gray-300 text-lg mb-8 max-w-xl"
             >
-              Saya membangun aplikasi web yang indah dan fungsional serta
-              membagikan pengetahuan melalui konten yang inspiratif.
+              I build beautiful and functional web applications and share knowledge through inspiring content.
+
             </motion.p>
 
             {/* BUTTON */}

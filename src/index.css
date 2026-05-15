@@ -4,103 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
-  --background: 40 25% 8%;
-  --foreground: 45 35% 92%;
+    --background: 40 25% 8%;
+    --foreground: 45 35% 92%;
 
-  --card: 40 20% 12%;
-  --card-foreground: 45 30% 90%;
+    --card: 40 20% 12%;
+    --card-foreground: 45 30% 90%;
 
-  --popover: 40 20% 12%;
-  --popover-foreground: 45 30% 90%;
+    --popover: 40 20% 12%;
+    --popover-foreground: 45 30% 90%;
 
-  --primary: 45 90% 60%;
-  --primary-foreground: 45 85% 65;
+    --primary: 45 90% 60%;
+    --primary-foreground: 45 85% 65;
 
-  --secondary: 42 30% 20%;
-  --secondary-foreground: 45 35% 90%;
+    --secondary: 42 30% 20%;
+    --secondary-foreground: 45 35% 90%;
 
-  --muted: 40 20% 18%;
-  --muted-foreground: 45 25% 70%;
+    --muted: 40 20% 18%;
+    --muted-foreground: 45 25% 70%;
 
-  --accent: 45 75% 60%;
-  --accent-foreground: 40 30% 10%;
+    --accent: 45 75% 60%;
+    --accent-foreground: 40 30% 10%;
 
-  --destructive: 0 70% 55%;
-  --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-  --border: 40 25% 25%;
-  --input: 40 25% 20%;
-  --ring: 45 85% 55%;
+    --border: 40 25% 25%;
+    --input: 40 25% 20%;
+    --ring: 45 85% 55%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
+    /* Custom */
     --gradient-primary: linear-gradient(135deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
     --gradient-hero: linear-gradient(180deg, hsl(40, 30%, 8%) 0%, hsl(40, 25%, 15%) 100%);
     --navbg: linear-gradient(100deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
-    --shadow-glow:  0 0 40px hsl(45 85% 60% / 0.6);
+    --shadow-glow: 0 0 40px hsl(45 85% 60% / 0.6);
     --shadow-card: 0 6px 20px hsl(43 40% 30% / 0.12);
     --shadow-card-hover: 0 12px 30px hsl(43 40% 30% / 0.2);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 175 80% 40%;
-  }
-
-  .dark {
-    --background: 40 25% 8%;
-  --foreground: 45 35% 92%;
-
-  --card: 40 20% 12%;
-  --card-foreground: 45 30% 90%;
-
-  --popover: 40 20% 12%;
-  --popover-foreground: 45 30% 90%;
-
-  --primary: 45 90% 60%;
-  --primary-foreground: 45 85% 65;
-
-  --secondary: 42 30% 20%;
-  --secondary-foreground: 45 35% 90%;
-
-  --muted: 40 20% 18%;
-  --muted-foreground: 45 25% 70%;
-
-  --accent: 45 75% 60%;
-  --accent-foreground: 40 30% 10%;
-
-  --destructive: 0 70% 55%;
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 40 25% 25%;
-  --input: 40 25% 20%;
-  --ring: 45 85% 55%;
-
-    /* Custom tokens dark */
-    --gradient-primary: linear-gradient(135deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
-    --gradient-hero: linear-gradient(180deg, hsl(40, 30%, 8%) 0%, hsl(40, 25%, 15%) 100%);
-    --navbg: linear-gradient(100deg, hsl(45, 85%, 55%), hsl(40, 70%, 35%));
-    --shadow-glow:  0 0 40px hsl(45 85% 60% / 0.6);
-    --shadow-card: 0 6px 20px hsl(43 40% 30% / 0.12);
-    --shadow-card-hover: 0 12px 30px hsl(43 40% 30% / 0.2);
-
-    --sidebar-background: 220 25% 8%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 15%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 175 80% 50%;
   }
 }
 
@@ -121,8 +63,9 @@
 
 @layer components {
   .bg-navbg {
-    background: var(--navbg)
+    background: var(--navbg);
   }
+
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
@@ -150,6 +93,45 @@
 
   .glass-strong {
     @apply bg-card/95 backdrop-blur-xl border border-border;
+  }
+
+  /* ========================= */
+  /* 🔥 HOVER EFFECTS (NEW) */
+  /* ========================= */
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .button-hover {
+    transition: all 0.3s ease;
+  }
+
+  .button-hover:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .link-hover {
+    transition: all 0.3s ease;
+  }
+
+  .link-hover:hover {
+    color: hsl(var(--primary));
+  }
+
+  .icon-hover {
+    transition: all 0.3s ease;
+  }
+
+  .icon-hover:hover {
+    transform: scale(1.2) rotate(5deg);
+    color: hsl(var(--primary));
   }
 }
 
